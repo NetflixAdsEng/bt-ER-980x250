@@ -27,19 +27,19 @@
     "@ff0000-ad-tech/ad-polyfills": "^1.1.0",
     "@ff0000-ad-tech/ad-video": "^2.0.2",
     "@ff0000-ad-tech/ad-ui": "^1.2.2",
-    "@ff0000-ad-tech/ad-utils": "git+ssh://github.com/ff0000-ad-tech/ad-utils.git#migrate/C3PO",
+    "@ff0000-ad-tech/ad-utils": "^2.1.1",
     "@ff0000-ad-tech/ad-view": "^1.3.1",
     "@ff0000-ad-tech/ad-velvet": "^3.4.1",
     "core-js": "^2.5.7",
     "@netflixadseng/pk-component-utils": "^4.0.0",
     "@netflixadseng/wc-netflix-preloader": "^5.0.0",
-    "@netflixadseng/wc-netflix-cta": "git+ssh://github.com/NetflixAdsEng/wc-netflix-cta.git#migrate/C3PO",
-    "@netflixadseng/wc-monet-integrator": "git+ssh://github.com/NetflixAdsEng/wc-monet-integrator.git#migrate/C3PO",
-    "@netflixadseng/wc-netflix-video": "git+ssh://github.com/NetflixAdsEng/wc-netflix-video.git#migrate/C3PO",
+    "@netflixadseng/wc-netflix-cta": "^6.0.0",
+    "@netflixadseng/wc-monet-integrator": "^6.0.0",
+    "@netflixadseng/wc-netflix-video": "^5.0.0",
     "@netflixadseng/wc-netflix-flushed-ribbon": "^5.0.0",
     "@netflixadseng/wc-netflix-brand-logo": "^5.0.0",
-    "@netflixadseng/wc-netflix-text": "git+ssh://github.com/NetflixAdsEng/wc-netflix-text.git#migrate/C3PO",
-    "@netflixadseng/wc-netflix-img": "git+ssh://github.com/NetflixAdsEng/wc-netflix-img.git#migrate/C3PO",
-    "@netflixadseng/wc-netflix-fonts": "git+ssh://github.com/NetflixAdsEng/wc-netflix-fonts.git#migrate/C3PO"
+    "@netflixadseng/wc-netflix-text": "^5.0.0",
+    "@netflixadseng/wc-netflix-img": "^5.0.0",
+    "@netflixadseng/wc-netflix-fonts": "^6.0.0"
   }
 }

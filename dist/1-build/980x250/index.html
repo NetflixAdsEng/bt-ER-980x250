@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- BUILD SOURCE: Container 2.0 - 980x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.3.2 / Created: 09/05/19 03:18pm -->
+  <!-- BUILD SOURCE: Container 2.0 - 980x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.3.2 / Created: 09/06/19 06:18pm -->
 
   <head>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -101,6 +101,13 @@
 
       function onImpression(fbaContent) {
         console.log("Index.onImpression()");
+        View.monetIntegrator.monetLoader.getInitialized().then(function(monet) {
+          monet.logEvent("MONET_IMPRESSION", {
+            type: adParams.netflixMonet.type,
+            skills: adParams.netflixMonet.skills
+          });
+        });
+
         Ad.launch(fbaContent);
       }
 
@@ -218,9 +225,6 @@
       }
       function failAd() {
         console.log("Index.failAd()");
-        if (window.Monet) {
-          Monet.trackEvent("MONET_CONTAINER_ERROR");
-        }
         useStatic();
       }
     </script>
@@ -338,7 +342,7 @@
       }
 
       function logMonetClick(targetId, event) {
-        Monet.trackEvent("CLICK", {
+        Monet.logEvent("CLICK", {
           src: targetId,
           coords: {
             x: event.mouse.global.x,

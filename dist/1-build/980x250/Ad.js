@@ -53,12 +53,10 @@ export class Ad {
 
     View.mainBorder = new MainBorder();
 
-    if (View.monetIntegrator.hasAttribute("allComponentsReady")) {
+    if (View.monetIntegrator.hasAttribute("ready")) {
       Control.handleMonetLoadComplete(View.monetIntegrator);
     } else {
-      View.monetIntegrator.addEventListener("allComponentsReady", function(
-        event
-      ) {
+      View.monetIntegrator.addEventListener("ready", function(event) {
         Control.handleMonetLoadComplete(View.monetIntegrator);
       });
     }

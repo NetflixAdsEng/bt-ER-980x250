@@ -15,7 +15,11 @@ import {
 import { ObjectUtils } from "ad-utils";
 import baseInit from "./baseInit.js";
 
-export { mainInit };
+export { mainInit, stackedInit };
+
+function stackedInit(T) {
+  mainInit(T);
+}
 
 function mainInit(T) {
   baseInit(T, {

@@ -64,8 +64,8 @@ export default function horizontalSideBySide({
     }
   },
   ctaLogoOffset = 14,
-  headlineFontSize = 18,
-  headlineLockupOffset = 8
+  tuneInFontSize = 18,
+  tuneInLockupOffset = 8
 } = {}) {
   let T = View.endFrame;
 
@@ -84,11 +84,11 @@ export default function horizontalSideBySide({
   });
 
   // side-by-side branding
-  // encompassing CTA, logo, and headline
+  // encompassing CTA, logo, and tune-in/FTM
   sideBySideBrandingLockup(T, {
     ctaLogoOffset,
-    headlineFontSize,
-    headlineLockupOffset,
+    tuneInFontSize,
+    tuneInLockupOffset,
     brandingLockupAlign
   });
 

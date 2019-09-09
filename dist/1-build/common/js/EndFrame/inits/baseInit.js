@@ -33,7 +33,7 @@ export default function baseInit(
     false;
 
   T.background = document.createElement("netflix-img");
-  T.background.setAttribute("data-dynamic-key", "Main");
+  T.background.setAttribute("data-dynamic-key", "Background");
   T.background.setAttribute("width", adParams.adWidth);
   T.appendChild(T.background);
 
@@ -54,17 +54,22 @@ export default function baseInit(
 
   // title treatment
   T.tt = document.createElement("netflix-img");
-  T.tt.setAttribute("data-dynamic-key", "Title");
+  T.tt.setAttribute("data-dynamic-key", "Title_Treatment");
   // resize TTs if retina setting set
   if (adData.retinaTT) {
     T.tt.setAttribute("width", adParams.adWidth);
   }
   T.appendChild(T.tt);
 
-  // headline
-  T.headline = document.createElement("netflix-text");
-  T.headline.setAttribute("data-dynamic-key", "Headline");
-  T.appendChild(T.headline);
+  // free trial messaging
+  T.ftm = document.createElement("netflix-text");
+  T.ftm.setAttribute("data-dynamic-key", "FTM");
+  T.appendChild(T.ftm);
+
+  // tune-in
+  T.tuneIn = document.createElement("netflix-text");
+  T.tuneIn.setAttribute("data-dynamic-key", "Tune_In");
+  T.appendChild(T.tuneIn);
 
   // logo
   T.netflixLogo = document.createElement("netflix-brand-logo");
@@ -92,7 +97,7 @@ export default function baseInit(
 
   // ratings bug
   T.ratingsBug = document.createElement("netflix-img");
-  T.ratingsBug.setAttribute("data-dynamic-key", "Ratings_Bug");
+  T.ratingsBug.setAttribute("data-dynamic-key", "Ratings_Bug_20x20");
   T.ratingsBug.setAttribute("id", "ratings_bug");
   T.ratingsBug.setAttribute("width", 20);
   T.appendChild(T.ratingsBug);

@@ -1,0 +1,72 @@
+{
+  "rootAssets": {
+    "image.Background": {
+      "type": "image",
+      "id": "Background",
+      "url": "treatment-assets/background.jpg"
+    },
+    "image.Title_Treatment": {
+      "type": "image",
+      "id": "Title_Treatment",
+      "url": ""
+    },
+    "bool.Double_Density_Title_Treatment": {
+      "type": "bool",
+      "id": "Double_Density_Title_Treatment",
+      "value": true
+    },
+    "text.Tune_In": {
+      "type": "text",
+      "id": "Tune_In",
+      "text": ""
+    },
+    "text.CTA": {
+      "type": "text",
+      "id": "CTA",
+      "text": "WATCH NOW"
+    },
+    "text.FTM": {
+      "type": "text",
+      "id": "FTM",
+      "text": ""
+    },
+    "url.Exit_URL_iOS": {
+      "type": "url",
+      "id": "Exit_URL_iOS",
+      "url": "https://www.netflix.com/"
+    },
+    "url.Exit_URL_Android": {
+      "type": "url",
+      "id": "Exit_URL_Android",
+      "url": "https://www.netflix.com/"
+    },
+    "url.Exit_URL_Desktop": {
+      "type": "url",
+      "id": "Exit_URL_Desktop",
+      "url": "https://www.netflix.com/"
+    },
+    "image.Ratings_Bug_20x20": {
+      "type": "image",
+      "id": "Ratings_Bug_20x20",
+      "url": ""
+    },
+    "bool.Toggle_Supercut": {
+      "type": "bool",
+      "id": "Toggle_Supercut",
+      "value": true
+    },
+    "video.Supercut": {
+      "type": "video",
+      "id": "Supercut",
+      "url": "https://ae.nflximg.net/assets/prod/94b3e9ce-a957-427e-bbf9-e11566afd288/20170725/049fa184-98ab-41dc-89d2-726aa179d210.mp4",
+      "videoType": "SUPERCUT"
+    },
+    "bool.Toggle_RTL": {
+      "type": "bool",
+      "id": "Toggle_RTL",
+      "value": false
+    }
+  },
+  "assetGroups": [],
+  "localizations": {}
+}

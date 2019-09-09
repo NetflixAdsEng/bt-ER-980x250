@@ -28,16 +28,6 @@ export class Control {
   }
 
   static handleClick(event) {
-    if (window.Monet) {
-      Monet.trackEvent("CLICK", {
-        src: event.target.id,
-        coords: {
-          x: event.mouse.local.x,
-          y: event.mouse.local.y
-        }
-      });
-    }
-
     Network.exit(overridePlatformExit, MonetUtils.getDataByKey("Exit_URL"));
   }
 

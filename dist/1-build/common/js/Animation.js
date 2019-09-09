@@ -1,4 +1,5 @@
 import { Styles, Markup, Align, Effects } from "ad-view";
+import { Device } from "ad-external";
 
 export class Animation {
   static start() {
@@ -22,7 +23,7 @@ export class Animation {
     const subScale = 1 + (initZoomScale - 1) * 0.03;
     const timeOffset = initZoomDuration * 0.3;
 
-    if (adData.useSupercut) {
+    if (adData.useSupercut && Device.type === "desktop") {
       if (View.endFrame.iris) {
         TweenLite.set(View.endFrame.iris.canvas, { opacity: 0 });
       }
@@ -56,16 +57,24 @@ export class Animation {
 
   static playIntro() {
     if (View.intro) {
+      const videoEl = View.intro.introVideoPlayer.querySelector("video");
+      const firstLogoCheckpt = 2.5;
       Styles.setCss(View.intro.netflixLogo, { opacity: 1 });
       View.intro.introVideoPlayer.play();
 
-      TweenLite.delayedCall(2.5, function() {
+      TweenLite.delayedCall(firstLogoCheckpt, function() {
         View.intro.netflixLogo.reverse();
+
+        // delaying querying video duration since not available till some media loaded
+        const videoDuration = videoEl.duration || 8;
+        TweenLite.delayedCall(videoDuration - 2 - firstLogoCheckpt, function() {
+          View.intro.netflixLogo.play();
+        });
+        TweenLite.to(View.intro.netflixLogo, 0.25, {
+          delay: videoDuration - firstLogoCheckpt,
+          alpha: 0
+        });
       });
-      TweenLite.delayedCall(6, function() {
-        View.intro.netflixLogo.play();
-      });
-      TweenLite.to(View.intro.netflixLogo, 0.25, { delay: 8, alpha: 0 });
     } else {
       Animation.showEndFrame();
     }
