@@ -1,369 +1,383 @@
 <!DOCTYPE html>
 <html>
-<!-- BUILD SOURCE: Container 2.0 - 980x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.3.2 / Created: 09/09/19 09:25pm -->
+  <!-- BUILD SOURCE: Container 2.0 - 980x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.3.2 / Created: 09/10/19 09:31am -->
 
-<head>
-	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta content="utf-8" http-equiv="encoding">
-		<!-- Red.Network.meta.start -->
-		<!-- Red.Network.meta.end -->
+  <head>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <!-- Red.Network.meta.start -->
+    <!-- Red.Network.meta.end -->
 
+    <title>**CLIENT NAME** **PROJECT NAME** 980x250</title>
 
-	<title>**CLIENT NAME** **PROJECT NAME** 980x250</title>
+    <script type="text/javascript">
+      /*-- Red.Network.clicktags.start --*/
+      var clickTag = function() {
+        Enabler.exit("clickTag");
+      };
+      var overridePlatformExit = function(url) {
+        /* IMPORTANT: Invoke this type of exit in the build like:
+         * 	Network.exit(
+         *		overridePlatformExit,
+         *		'https://dynamic_exit.com'
+         *	);
+         * OR HARDCODE the URL here, like:
+         *	Enabler.exitOverride("id", "https://dynamic_exit.com");
+         * AND invoke in the build, like:
+         * 	Network.exit(overridePlatformExit);
+         */
+        Enabler.exitOverride("id", url);
+      };
+      var collapsedExit = function() {
+        Enabler.exit("USER_EXITED_WHILE_COLLAPSED");
+      };
+      var expandedExit = function() {
+        Enabler.exit("USER_EXITED_WHILE_EXPANDED");
+      };
+      // define more as needed
+      /*-- Red.Network.clicktags.end --*/
 
-	<script type="text/javascript">
+      /* -- INDEX SETTINGS ---------------------------------------------------------------------------
+       *
+       *
+       *	API Documentation is here: https://ff0000-ad-tech.github.io/ad-docs/
+       *
+       *
+       *
+       */
+      /*-- Red.Settings.ad_params.start --*/
+      var adParams = {
+        networkId: "NETFLIX_MONET",
+        adWidth: 980,
+        adHeight: 250,
+        environmentId: "debug",
+        politeLoadAfter: 0,
+        failoverOnError: true,
+        netflixMonet: {
+          type: "STANDARD", // 'RICH_MEDIA'
+          skills: [
+            "SINGLE_TITLE" //'VIDEO', 'EXPANDABLE', 'CAROUSEL', 'MULTI_TITLE', 'AUTOPLAY'
+          ]
+        },
+        version: {
+          major: 3,
+          minor: 3,
+          patch: 2
+        }
+      };
+      /*-- Red.Settings.ad_params.end --*/
 
+      /*-- Red.Settings.assets.start --*/
+      var assets = {
+        preloader: {
+          backgroundColor: "#ffffff",
+          images: []
+        },
+        failover: {
+          images: [
+            {
+              source: "backup.jpg"
+            }
+          ]
+        },
+        payload: {
+          text: ["build.bundle.js"],
+          binary: []
+        }
+      };
+      /*-- Red.Settings.assets.end --*/
 
-		/*-- Red.Network.clicktags.start --*/
-var clickTag = function() {
-	Enabler.exit('clickTag')
-}
-var overridePlatformExit = function(url) {
-	/* IMPORTANT: Invoke this type of exit in the build like:
-	 * 	Network.exit(
-	 *		overridePlatformExit,
-	 *		'https://dynamic_exit.com'
-	 *	);
-	 * OR HARDCODE the URL here, like:
-	 *	Enabler.exitOverride("id", "https://dynamic_exit.com");
-	 * AND invoke in the build, like:
-	 * 	Network.exit(overridePlatformExit);
-	 */
-	Enabler.exitOverride('id', url)
-}
-var collapsedExit = function() {
-	Enabler.exit('USER_EXITED_WHILE_COLLAPSED')
-}
-var expandedExit = function() {
-	Enabler.exit('USER_EXITED_WHILE_EXPANDED')
-}
-// define more as needed
-		/*-- Red.Network.clicktags.end --*/
+      /*-- Red.Settings.environments.start --*/
+      var environments = [];
+      /*-- Red.Settings.environments.end --*/
 
+      /*-- Red.Settings.external_includes.start --*/
+      var externalIncludes = [
+        "https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js",
+        "https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js"
+      ];
+      /*-- Red.Settings.external_includes.end --*/
 
-		/* -- INDEX SETTINGS ---------------------------------------------------------------------------
-		 *
-		 *
-		 *	API Documentation is here: https://ff0000-ad-tech.github.io/ad-docs/
-		 *
-		 *
-		 *
-		 */
-		/*-- Red.Settings.ad_params.start --*/
-		var adParams = {
-				networkId				: "NETFLIX_MONET",
-				adWidth				: 980,
-				adHeight				: 250,
-				environmentId			: "debug",
-				politeLoadAfter		: 0,
-				failoverOnError		: true,
-				netflixMonet: {
-					type: 'STANDARD', // 'RICH_MEDIA'
-					skills: [
-						'SINGLE_TITLE', //'VIDEO', 'EXPANDABLE', 'CAROUSEL', 'MULTI_TITLE', 'AUTOPLAY'
-					],
-				},
-				version: {
-					major: 3,
-					minor: 3,
-					patch: 2
-				},
-			};
-		/*-- Red.Settings.ad_params.end --*/
+      function onImpression(fbaContent) {
+        console.log("Index.onImpression()");
+        View.monetIntegrator.monetLoader.getInitialized().then(function(monet) {
+          monet.logEvent("MONET_IMPRESSION", {
+            type: adParams.netflixMonet.type,
+            skills: adParams.netflixMonet.skills
+          });
+        });
 
+        Ad.launch(fbaContent);
+      }
 
-		/*-- Red.Settings.assets.start --*/
-			var assets = {
-				preloader: {
-					backgroundColor: "#ffffff",
-					images: []
-				},
-				failover: {
-					images: [{
-						source: "backup.jpg"
-					}]
-				},
-				payload: {
-					text: ["build.bundle.js"],
-					binary: []
-				}
-			};
-		/*-- Red.Settings.assets.end --*/
+      function isDevEnvironment() {
+        return (
+          adParams.environmentId == "debug" ||
+          window.location.href.match(/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+/)
+        );
+      }
+    </script>
 
+    <style type="text/css">
+      html,
+      body,
+      #view {
+        width: 100%;
+        height: 100%;
+      }
 
-		/*-- Red.Settings.environments.start --*/
-		var environments = [
+      #view {
+        overflow: hidden;
+      }
 
-			];
-		/*-- Red.Settings.environments.end --*/
+      body {
+        margin: 0px;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+    </style>
+    <style type="text/css" id="RED_uiBorder">
+      .ui-border {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-width: 0px;
+        border-style: solid;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    </style>
 
-		/*-- Red.Settings.external_includes.start --*/
-		var externalIncludes = [
-				'https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js',
-				"https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js",
-			];
-		/*-- Red.Settings.external_includes.end --*/
+    <style type="text/css">
+      netflix-img,
+      netflix-text {
+        position: absolute;
+      }
+    </style>
 
+    <!-- Red.Network.script.start -->
+    <script
+      id="doubleclick"
+      src="https://s0.2mdn.net/ads/studio/Enabler.js"
+    ></script>
+    <!-- Red.Network.script.end -->
+  </head>
 
-		function onImpression(fbaContent) {
-			console.log('Index.onImpression()')
-View.monetIntegrator.monetLoader.getInitialized().then(function(monet) {
-	monet.logEvent('MONET_IMPRESSION', {
-		type: adParams.netflixMonet.type,
-		skills: adParams.netflixMonet.skills
-	})
-})
+  <body>
+    <div id="view">
+      <div id="main"></div>
+      <div id="aux">
+        <div id="preloader" class="ui-border"></div>
+        <div id="fail"></div>
+      </div>
+    </div>
 
-Ad.launch(fbaContent)
+    <script type="text/javascript">
+      /*-- Red.Inject.promise_polyfill.start --*/
+      /*-- Red.Inject.promise_polyfill.end --*/
 
+      /*-- Red.Requester.monet_integrator.start --*/
+      inject("../node_modules/@netflixadseng/wc-monet-integrator/package.json");
+      /*-- Red.Requester.monet_integrator.end --*/
 
-		}
+      /*-- Red.Requester.netflix_preloader.start --*/
 
-		function isDevEnvironment() {
-			return adParams.environmentId == 'debug' || window.location.href.match(/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+/)
-		}
+      inject(
+        "../node_modules/@netflixadseng/wc-netflix-preloader/package.json"
+      );
+      /*-- Red.Requester.netflix_preloader.end --*/
+    </script>
 
-	</script>
+    <!-- preload inline scripts...if not needed until the build, use externalIncludes  -->
 
-	<style type="text/css">
-		html,
-		body,
-		#view {
-			width: 100%;
-			height: 100%;
-		}
+    <script type="text/javascript">
+      function useStatic() {
+        console.log("Index.useStatic()");
+        removePreloader();
+        document.getElementById("main").style.display = "none";
+        document.getElementById("aux").style.display = "block";
+        document.body.style =
+          "width: " +
+          adParams.failoverWidth +
+          "px; height: " +
+          adParams.failoverHeight +
+          "px; overflow: hidden;";
+        document.getElementById("fail").style.cssText =
+          "position: absolute; " +
+          "width: " +
+          adParams.failoverWidth +
+          "px; height: " +
+          adParams.failoverHeight +
+          "px; " +
+          "left:" +
+          adParams.failoverX +
+          "px; top:" +
+          adParams.failoverY +
+          "px; " +
+          "background-image: url(" +
+          adParams.adPath +
+          assets.failover.images[0].source +
+          "); background-size: contain; overflow: hidden; ";
+      }
+      function failAd() {
+        console.log("Index.failAd()");
+        useStatic();
+      }
+    </script>
 
-		#view {
-			overflow: hidden;
-		}
+    <script type="text/javascript">
+      var global = this;
+      var View = {};
+      var Network, queryParams, adData;
+      var netflixPreloader;
 
-		body {
-			margin: 0px;
-			outline: none;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		}
-	</style>
-	<style type="text/css" id="RED_uiBorder">
-		.ui-border {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100%;
-			border-width: 0px;
-			border-style: solid;
-			box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-		}
-	</style>
+      /* -- LAUNCH --------------------------------------------
+       *
+       *
+       */
+      // immediatelly invoked in inline_entry (node_modules/ad-entry/index.js)
+      function prepareIndex() {
+        console.log("Index.prepareIndex()");
+        return new Promise(
+          function(resolve) {
+            /*-- Red.Network.onload.start --*/
+            resolve();
+            /*-- Red.Network.onload.end --*/
 
-		<style type="text/css">
-			netflix-img,
-			netflix-text {
-				position: absolute;
-			}
-		</style>
+            netflixPreloader = document.createElement("netflix-preloader");
+            netflixPreloader.setAttribute("width", adParams.adWidth);
+            netflixPreloader.setAttribute("height", adParams.adHeight);
+            netflixPreloader.setAttribute(
+              "bg-color",
+              assets.preloader.backgroundColor
+            );
+            netflixPreloader.setAttribute(
+              "frame-color",
+              document.getElementById("preloader").style.borderColor
+            );
+            document.getElementById("preloader").appendChild(netflixPreloader);
+            /*-- Red.Network.onload.start --*/
+            /*-- Red.Network.onload.end --*/
+          },
+          function(error) {
+            global.failAd();
+          }
+        );
+      }
 
+      // ad-params
+      function prepareAdParamsMisc() {
+        console.log("Index.prepareAdParamsMisc()");
+        return new Promise(
+          function(resolve) {
+            resolve();
+          },
+          function(error) {
+            global.failAd();
+          }
+        );
+      }
 
-	<!-- Red.Network.script.start -->
-<script id="doubleclick" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-	<!-- Red.Network.script.end -->
-</head>
+      // preloader
+      function preparePreloadMisc() {
+        console.log("Index.preparePreloadMisc()");
+        return new Promise(
+          function(resolve) {
+            resolve();
+          },
+          function(error) {
+            global.failAd();
+          }
+        );
+      }
+      function removePreloader() {
+        console.log("Index.removePreloader()");
+        makeAuxClickable();
 
-<body>
-	<div id="view">
-		<div id="main"></div>
-		<div id="aux">
-			<div id="preloader" class="ui-border"></div>
-			<div id="fail"></div>
-		</div>
-	</div>
+        var preloader = document.getElementById("preloader");
+        if (preloader) {
+          var aux = document.getElementById("aux");
+          aux.style.display = "none";
+          aux.removeChild(preloader);
+        }
+      }
 
-	<script type="text/javascript">
-		/*-- Red.Inject.promise_polyfill.start --*/
-		/*-- Red.Inject.promise_polyfill.end --*/
+      // exits
+      function prepareNetworkExit() {
+        console.log("Index.prepareNetworkExit()");
+        Network = new (function() {
+          /*-- Red.Network.exit.start --*/
+          this.exit = function(clickTag, url) {
+            console.log("Network -> NETFLIX_MONET EXIT");
+            try {
+              Monet.logEvent("AD_EXIT", { url: url || "DCS default exit" });
+            } catch (e) {}
+            if (typeof clickTag == "function") clickTag.call(this, url);
+            else
+              throw new Error(
+                "ERROR: clickTag for this platform needs to be a callable function. See <Network> docs."
+              );
+          };
+          /*-- Red.Network.exit.end --*/
 
-/*-- Red.Requester.monet_integrator.start --*/
-inject('../node_modules/@netflixadseng/wc-monet-integrator/package.json')
-/*-- Red.Requester.monet_integrator.end --*/
+          this.appendMacro = function(_macro, _clickTag) {
+            if (_macro.search(/^%%/) > -1) return _clickTag;
+            else return _macro + _clickTag;
+          };
+        })();
+      }
+      function makeAuxClickable() {
+        var aux = document.getElementById("aux");
+        aux.setAttribute("onclick", "handleAuxClick()");
+      }
+      function handleAuxClick() {
+        console.log("Index.handleAuxClick()");
+        /*-- Red.Network.exit_aux.start --*/
+        Network.exit(clickTag);
+        /*-- Red.Network.exit_aux.end --*/
+      }
 
-/*-- Red.Requester.netflix_preloader.start --*/ 
-inject('../node_modules/@netflixadseng/wc-netflix-preloader/package.json')
-/*-- Red.Requester.netflix_preloader.end --*/ 
+      function logMonetClick(targetId, event) {
+        Monet.logEvent("CLICK", {
+          src: targetId,
+          coords: {
+            x: event.mouse.global.x,
+            y: event.mouse.global.y
+          }
+        });
+      }
 
-	</script>
+      function jsBundleLoadComplete() {
+        console.log("Index.jsBundleLoadComplete()");
+        View.monetIntegrator = document.createElement("monet-integrator");
+        document.getElementById("main").appendChild(View.monetIntegrator);
+      }
 
+      // ad-global bundle
+      /*-- Red.Inject.ad-global.start --*/
+      /*-- Red.Inject.ad-global.end --*/
+    </script>
 
-		<!-- preload inline scripts...if not needed until the build, use externalIncludes  --> 
+    <!-- ad-load bundle -->
+    <script type="text/javascript">
+      /*-- Red.Inject.commons.start --*/
+      /*-- Red.Inject.commons.end --*/
+    </script>
 
+    <!-- inline bundle -->
+    <script type="text/javascript">
+      /*-- Red.Inject.inline_entry.start --*/
+      /*-- Red.Inject.inline_entry.end --*/
+    </script>
 
-	<script type="text/javascript">
-		function useStatic() {
-			console.log("Index.useStatic()");
-			removePreloader();
-			document.getElementById( "main" ).style.display = "none";
-			document.getElementById( "aux" ).style.display = "block";
-			document.body.style = "width: " + adParams.failoverWidth + "px; height: " + adParams.failoverHeight + "px; overflow: hidden;";
-			document.getElementById( "fail" ).style.cssText = "position: absolute; " +
-				"width: " + adParams.failoverWidth + "px; height: " + adParams.failoverHeight + "px; " +
-				"left:" + adParams.failoverX + "px; top:" + adParams.failoverY + "px; " + 
-				"background-image: url(" + adParams.adPath + assets.failover.images[0].source + "); background-size: contain; overflow: hidden; ";
-
-		}
-		function failAd() {
-			console.log("Index.failAd()");
-			useStatic();
-
-		}
-	</script>
-
-	<script type="text/javascript">
-		var global = this
-		var View = {}
-		var Network,
-			queryParams,
-			adData
-var netflixPreloader
-
-
-
-		/* -- LAUNCH --------------------------------------------
-		 *
-		 *
-		 */
-		// immediatelly invoked in inline_entry (node_modules/ad-entry/index.js)
-		function prepareIndex() {
-			console.log('Index.prepareIndex()')
-			return new Promise(function (resolve) {
-				/*-- Red.Network.onload.start --*/
-resolve()
-				/*-- Red.Network.onload.end --*/
-
-				netflixPreloader = document.createElement('netflix-preloader')
-				netflixPreloader.setAttribute('width', adParams.adWidth)
-				netflixPreloader.setAttribute('height', adParams.adHeight)
-				netflixPreloader.setAttribute('bg-color', assets.preloader.backgroundColor)
-				netflixPreloader.setAttribute('frame-color', document.getElementById('preloader').style.borderColor)
-				document.getElementById('preloader').appendChild(netflixPreloader)
-				/*-- Red.Network.onload.start --*/
-				/*-- Red.Network.onload.end --*/
-
-
-			}, function (error) {
-				global.failAd()
-			})
-		}
-
-		// ad-params
-		function prepareAdParamsMisc() {
-			console.log('Index.prepareAdParamsMisc()')
-			return new Promise(function (resolve) {
-				resolve()
-
-			}, function (error) {
-				global.failAd()
-			})
-		}
-
-		// preloader
-		function preparePreloadMisc() {
-			console.log('Index.preparePreloadMisc()')
-			return new Promise(function (resolve) {
-				resolve()
-
-			}, function (error) {
-				global.failAd()
-			})
-		}
-		function removePreloader() {
-			console.log('Index.removePreloader()')
-			makeAuxClickable()
-
-			var preloader = document.getElementById('preloader')
-			if (preloader) {
-				var aux = document.getElementById('aux')
-				aux.style.display = 'none'
-				aux.removeChild(preloader)
-			}
-		}
-
-		// exits
-		function prepareNetworkExit() {
-			console.log('Index.prepareNetworkExit()')
-			Network = new function () {
-					/*-- Red.Network.exit.start --*/
-this.exit = function(clickTag, url) {
-	console.log('Network -> NETFLIX_MONET EXIT')
-	try {
-		Monet.logEvent('AD_EXIT', { url: url || 'DCS default exit' })
-	} catch (e) {}
-	if (typeof clickTag == 'function') clickTag.call(this, url)
-	else throw new Error('ERROR: clickTag for this platform needs to be a callable function. See <Network> docs.')
-}
-					/*-- Red.Network.exit.end --*/	
-
-				this.appendMacro = function (_macro, _clickTag) {
-					if (_macro.search(/^%%/) > -1)
-						return _clickTag
-					else return _macro + _clickTag
-				}
-			}
-		}
-		function makeAuxClickable() {
-			var aux = document.getElementById('aux')
-			aux.setAttribute('onclick', 'handleAuxClick()')
-		}
-		function handleAuxClick() {
-			console.log('Index.handleAuxClick()')
-			/*-- Red.Network.exit_aux.start --*/
-Network.exit(clickTag)
-			/*-- Red.Network.exit_aux.end --*/
-
-
-		}
-
-function logMonetClick(targetId, event) {
-	Monet.logEvent('CLICK', {
-		src: targetId,
-		coords: {
-			x: event.mouse.global.x,
-			y: event.mouse.global.y
-		}
-	})
-}
-
-function jsBundleLoadComplete() {
-	console.log('Index.jsBundleLoadComplete()')
-	View.monetIntegrator = document.createElement('monet-integrator')
-	document.getElementById('main').appendChild(View.monetIntegrator)
-}
-
-
-
-		// ad-global bundle
-		/*-- Red.Inject.ad-global.start --*/
-		/*-- Red.Inject.ad-global.end --*/
-	</script>
-
-	<!-- ad-load bundle -->
-	<script type="text/javascript">
-			/*-- Red.Inject.commons.start --*/
-			/*-- Red.Inject.commons.end --*/
-	</script>
-
-	<!-- inline bundle -->
-	<script type="text/javascript">
-			/*-- Red.Inject.inline_entry.start --*/
-			/*-- Red.Inject.inline_entry.end --*/
-	</script>
-
-	<!-- initial bundle -->
-	<script type="text/javascript">
-			/*-- Red.Inject.initial_entry.start --*/
-			/*-- Red.Inject.initial_entry.end --*/
-	</script>
-</body>
-
+    <!-- initial bundle -->
+    <script type="text/javascript">
+      /*-- Red.Inject.initial_entry.start --*/
+      /*-- Red.Inject.initial_entry.end --*/
+    </script>
+  </body>
 </html>
