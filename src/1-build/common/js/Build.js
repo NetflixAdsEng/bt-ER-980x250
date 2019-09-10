@@ -12,7 +12,7 @@ import {
   centerPostMarkup,
   offCenterLeftPostMarkup
 } from "./EndFrame/postMarkups";
-import { mainInit } from "./EndFrame/inits";
+import { mainInit, stackedInit } from "./EndFrame/inits";
 import { Animation } from "@common/js/Animation.js";
 import { Control } from "@common/js/Control.js";
 import "@netflixadseng/wc-netflix-flushed-ribbon";
@@ -112,7 +112,8 @@ export function EndFrame(arg) {
 
   T.subLayer.appendChild(T);
 
-  mainInit(T);
+  let init = arg.layout === "STACKED" && stackedInit ? stackedInit : mainInit;
+  init(T);
 
   let postMarkup;
   switch (arg.layout) {
