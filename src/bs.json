@@ -7,10 +7,10 @@
   "build_source_options": {
     "stub_paths": []
   },
-  "output": "/Users/derek.miranda/Internal/c20/build-templates/bt-ER-980x250",
+  "output": "/Users/derek.miranda/Internal/c20/build-templates-prod/bt-ER-980x250",
   "filters": {},
   "id": "Container 2.0 - 980x250",
-  "bsid": "32895c18-b37b-48f6-a30d-47cd9e42cd5e",
+  "bsid": "68453e1f-2233-4043-9121-4db3103b2fa8",
   "processing": false,
   "error": false
 }
