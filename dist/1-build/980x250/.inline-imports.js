@@ -1,2 +1,3 @@
-import { InlineSrc } from "ad-assets";
-window.InlineSrc = InlineSrc;
+import { InlineSrc } from 'ad-assets'
+window.InlineSrc = InlineSrc
+

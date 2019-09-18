@@ -34,7 +34,7 @@ export default function AdData() {
   self.svg = {};
 
   self.useSupercut = MonetUtils.getDataByKey("Toggle_Supercut");
-  self.isRTL = MonetUtils.getDataByKey("Toggle_RTL");
+  self.isRTL = MonetUtils.getDataByKey("Toggle_Right-To-Left_Language");
   self.hasTT = !!MonetUtils.getDataByKey("Title_Treatment");
   self.retinaTT = !!MonetUtils.getDataByKey("Double_Density_Title_Treatment");
 }
