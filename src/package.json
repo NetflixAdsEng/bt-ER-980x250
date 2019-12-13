@@ -20,8 +20,8 @@
     "browser": "node ./node_modules/@ff0000-ad-tech/wp-creative-server/index.js --context ./ --browser"
   }, 
   "devDependencies": {
-    "@ff0000-ad-tech/wp-creative-server": "^1.10.0", 
-    "@ff0000-ad-tech/wp-deploy-manager": "^7.0.0", 
+    "@ff0000-ad-tech/wp-creative-server": "^1.11.0", 
+    "@ff0000-ad-tech/wp-deploy-manager": "^8.0.0", 
     "eslint": "^5.16.0", 
     "eslint-config-prettier": "^2.10.0", 
     "eslint-plugin-prettier": "^3.0.1", 
@@ -30,7 +30,7 @@
   "dependencies": {
     "@ff0000-ad-tech/cs-plugin-bulk-compile": "^1.0.1", 
     "@ff0000-ad-tech/cs-plugin-vendor-indexes": "^1.1.0", 
-    "@ff0000-ad-tech/cs-plugin-apply-network": "^1.1.1", 
+    "@ff0000-ad-tech/cs-plugin-apply-network": "^2.0.0", 
     "@ff0000-ad-tech/cs-plugin-vendor-c20": "^1.0.1"
   }
 }
