@@ -50,6 +50,11 @@
       "id": "Ratings_Bug_20x20",
       "url": ""
     },
+    "bool.Toggle_Ribbon": {
+      "type": "bool",
+      "id": "Toggle_Ribbon",
+      "value": true
+    },
     "bool.Toggle_Supercut": {
       "type": "bool",
       "id": "Toggle_Supercut",
