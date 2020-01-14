@@ -33,7 +33,10 @@ export default function AdData() {
   // Store svg markup for use in all UISvg instances, reduces duplicate code across builds.  See UISvg.
   self.svg = {};
 
-  self.useRibbon = MonetUtils.getDataByKey("Toggle_Ribbon");
+  // if ribbon toggle not defined in treatment JSON, default to using ribbon
+  const ribbonToggle = MonetUtils.getDataByKey("Toggle_Ribbon");
+  self.useRibbon = ribbonToggle === false ? false : true;
+
   self.useSupercut = MonetUtils.getDataByKey("Toggle_Supercut");
   self.isRTL = MonetUtils.getDataByKey("Toggle_Right-To-Left_Language");
   self.hasTT = !!MonetUtils.getDataByKey("Title_Treatment");
